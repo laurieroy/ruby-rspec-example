@@ -1,0 +1,1 @@
+This project follows along with Kevin Skoglund's Lynda.com Ruby: Teesting with RSpec course.

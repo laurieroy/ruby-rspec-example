@@ -98,3 +98,5 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+APP_ROOT = File.expand_path('../..', __FILE__)
