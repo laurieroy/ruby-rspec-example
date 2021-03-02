@@ -100,3 +100,31 @@ RSpec.configure do |config|
 end
 
 APP_ROOT = File.expand_path('../..', __FILE__)
+
+
+# no_ouput do
+#   ... code here
+# output goes to dev/null on unix machines
+# end
+def no_output(&block)
+  original_stdout = $stdout.dup
+  $stdout.reopen('/dev/null')
+  $stdout.sync = true
+  begin
+    yield
+  ensure
+    $stdout.reopen(original_stdout)
+  end
+end
+
+def capture_output(&block)
+  original_stdout = $stdout.dup
+  output_catcher = StringIO.new
+  $stdout = output_catcher
+  begin
+    yield
+  ensure
+    $stdout = original_stdout
+  end
+  output_catcher.string
+end
