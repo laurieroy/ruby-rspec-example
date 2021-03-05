@@ -9,13 +9,16 @@ puts
 print "Make: "
 make = gets.chomp
 
-print "Year: "
+print "Year: (e.g., 2019) "
 year = gets.chomp
 
 print "Color: "
 color = gets.chomp
 
-car = Car.new(:make => make, :year => year, :color => color)
+print "Doors: (e.g., 4)"
+doors = gets.chomp
+
+car = Car.new(:make => make, :year => year, :color => color, :doors => doors)
 
 puts
 puts "I understand that you want to purchase: #{car.full_name}."

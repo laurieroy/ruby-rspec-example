@@ -20,9 +20,5 @@ shared_examples_for('a standard vehicle') do
     it "allows reading for :wheels" do
       expect(subject.wheels).to eq(4)
     end
-    
-    it "allows writing for :doors"
-    
   end
-  
 end
